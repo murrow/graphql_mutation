@@ -1,5 +1,5 @@
 {
-    "name": "murrow/graphql_mutation",
+    "name": "drupal/graphql_mutation",
     "description": "Fork of drupal/graphql_mutation",
     "type": "library",
     "autoload": {
