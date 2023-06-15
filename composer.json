@@ -1,0 +1,17 @@
+{
+    "name": "murrow/graphql_mutation",
+    "description": "Fork of drupal/graphql_mutation",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Murrow\\GraphqlMutation\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tony Murrow",
+            "email": "tony@macron.tech"
+        }
+    ],
+    "require": {}
+}
