@@ -26,6 +26,7 @@ trait EntityMutationInputTrait {
    */
   protected function extractEntityInput($value, array $args, ResolveContext $context, ResolveInfo $info) {
     $definition = $this->getPluginDefinition();
+    /** @var InputObjectType $inputType */
     $inputType = $info->schema->getType($definition['input_type']);
     $fields = isset($inputType->config['field_map']) ? $inputType->config['field_map'] : [];
 

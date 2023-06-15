@@ -2,8 +2,7 @@
 
 namespace Drupal\Tests\graphql_mutation\Kernel;
 
-use Drupal\simpletest\ContentTypeCreationTrait;
-use Drupal\Tests\graphql\Kernel\GraphQLTestBase;
+use Drupal\Tests\graphql_core\Kernel\GraphQLContentTestBase;
 use Drupal\user\Entity\Role;
 
 /**
@@ -11,8 +10,7 @@ use Drupal\user\Entity\Role;
  *
  * @group graphql_mutation
  */
-class CreateEntityTest extends GraphQLTestBase {
-  use ContentTypeCreationTrait;
+class CreateEntityTest extends GraphQLContentTestBase {
 
   /**
    * {@inheritdoc}
@@ -29,13 +27,16 @@ class CreateEntityTest extends GraphQLTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
     $this->installConfig('node');
     $this->installConfig('filter');
     $this->installEntitySchema('node');
     $this->installSchema('node', 'node_access');
-    $this->createContentType(['type' => 'test']);
+    $this->createContentType([
+      'title' => 'Test type',
+      'type' => 'test',
+    ]);
 
     Role::load('anonymous')
       ->grantPermission('access content')
